@@ -1,0 +1,236 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Compliance Checklist Creation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-clipboard-check"></i>
+                <span>ComplianceCheck</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#features" class="nav-link">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#upload" class="nav-link">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#checklist" class="nav-link">Checklist</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <button class="login-btn" onclick="showLoginModal()">Login</button>
+                </li>
+                <li class="nav-item">
+                    <button class="signup-btn" onclick="showSignupModal()">Sign Up</button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Automated Compliance Checklist Creation</h1>
+            <p>Transform regulatory documents into actionable compliance checklists with AI-powered automation</p>
+            <div class="hero-buttons">
+                <button class="cta-btn" onclick="showSignupModal()">Get Started</button>
+                <button class="secondary-btn" onclick="scrollToSection('features')">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-card">
+                <i class="fas fa-file-upload"></i>
+                <h3>Upload Document</h3>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Exporting Checklist</h3>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-list-check"></i>
+                <h3>Generate Checklist</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>Document Upload</h3>
+                    <p>Upload regulatory documents in various formats including PDF, PPT, and Word documents</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Smart Checklists</h3>
+                    <p>Automatically generate comprehensive compliance checklists from your documents</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Export Options</h3>
+                    <p>Export your checklists in multiple formats for easy sharing and implementation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <h2>Upload Your Regulatory Documents</h2>
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-content">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drag & Drop Your Files Here</h3>
+                    <p>Supported formats: PDF, PPT, PPTX, DOC, DOCX</p>
+                    <input type="file" id="fileInput" multiple accept=".pdf,.ppt,.pptx,.doc,.docx" style="display: none;">
+                    <button class="upload-btn" onclick="document.getElementById('fileInput').click()">Choose Files</button>
+                </div>
+            </div>
+            <div class="uploaded-files" id="uploadedFiles"></div>
+        </div>
+    </section>
+
+    <!-- Checklist Section -->
+    <section id="checklist" class="checklist-section">
+        <div class="container">
+            <h2>Generated Compliance Checklist</h2>
+            <div class="checklist-container" id="checklistContainer">
+                <div class="no-checklist">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>No Checklist Generated Yet</h3>
+                    <p>Upload a regulatory document to generate your compliance checklist</p>
+                </div>
+            </div>
+            <div class="container" style="margin-top:20px; text-align:center;">
+                <button class="upload-btn" id="exportPdfBtn">Export as PDF</button>
+                <button class="upload-btn" id="exportDocxBtn" style="margin-left:10px;">Export as Word</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About ComplianceCheck</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>ComplianceCheck is an innovative platform that leverages artificial intelligence to transform complex regulatory documents into actionable compliance checklists. Our mission is to simplify compliance management for organizations of all sizes.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>1000+</h3>
+                            <p>Documents Processed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Regulations Supported</p>
+                        </div>
+                        <div class="stat">
+                            <h3>99%</h3>
+                            <p>Accuracy Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <p class="modal-footer">
+                Don't have an account? <a href="#" onclick="showSignupModal()">Sign up here</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Create Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+            <p class="modal-footer">
+                Already have an account? <a href="#" onclick="showLoginModal()">Login here</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('successModal')">&times;</span>
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h2 id="successTitle">Success!</h2>
+                <p id="successMessage">Your account has been created successfully!</p>
+                <button class="submit-btn" onclick="closeModal('successModal')">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>window.pdfjsLib && (window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js');</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
